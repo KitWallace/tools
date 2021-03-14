@@ -1,4 +1,5 @@
 @echo off
+::  convert a set of jpgs, labeling each with the last part of its file name and combining into a GIF 
 ::  three parameters 
 ::    wildcard list of jpg images, probably within a subdirectory- filename structured so that the part after the - is the label
 ::    directory (which exists) of location for the labeled jpgs
