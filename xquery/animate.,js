@@ -1,0 +1,55 @@
+// global :  dir, images array
+
+var image_i;
+var max = images.length;
+var delay = 1000;
+var timer;
+var cache =[];
+
+function show_image(i) {
+   var image_fn = images[i];
+   var fn = dir + "/"+image_fn;
+//   console.log(fn);
+   $("#photo").attr("src",fn);
+   $('#caption').html(image_fn.split(".")[0]);
+   image_i=i;
+}
+
+function next_image() {
+   if (image_i < max - 1 )
+      show_image(image_i + 1);    
+}
+
+function prev_image() {
+   if (image_i > 0)
+       show_image(image_i - 1);    
+}
+
+function start_animate() {
+   image_i = 0;
+   run_animate();
+}
+function run_animate() {
+   timer = setTimeout(run_animate, delay);
+   show_image(image_i);         
+   if (image_i >= max - 1) 
+      stop_animate();
+   else  image_i+= 1;
+}  
+
+function stop_animate() {
+   clearTimeout(timer);
+}       
+
+function pre_load() {
+  for (var i in images) {
+     var img = new Image();
+     img.src= dir + "/"+ images[i];
+     cache.push(img);
+  }
+}
+        
+$(document).ready(function() {  
+  pre_load(); 
+  show_image(0);
+})
