@@ -21,7 +21,7 @@ for %%f in (%fileList%) do (
 	  set "LABEL='%%b'"
    )
    echo !LABEL!  
-   convert "%%f" -fill white -pointsize 50 -draw "text 650,100 !LABEL! " "%outdir%\!FN!"   
+   convert "%%f" -fill white -pointsize 50 -draw "text 50,100 !LABEL! " "%outdir%\!FN!"   
    ) 
 
 convert -delay 100 -loop 0 "%outdir%\*"  %gif%
