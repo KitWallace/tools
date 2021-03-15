@@ -2,7 +2,7 @@
 ::  convert a set of jpgs, labeling each with the last part of its file name and combining into a GIF 
 ::  three parameters 
 ::    wildcard list of jpg images, probably within a subdirectory- filename structured so that the part after the - is the label
-::    directory (which exists) of location for the labeled jpgs
+::    directory of location for the labeled jpgs  - this must already exist and be empty 
 ::    file name of the gif to be generated
 ::  parameters of the label and its position, and the delay on the gif have to be changed by editing the bat file
 ::
